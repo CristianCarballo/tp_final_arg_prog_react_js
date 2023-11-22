@@ -9,7 +9,6 @@ import Checkbox from "@mui/material/Checkbox";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 export const TodoList = ({ tasks, setTasks }) => {
-  // Handle toggling task completion
   const handleToggleTaskCompletion = (taskId) => {
     setTasks(
       tasks.map((task) => {
@@ -21,13 +20,11 @@ export const TodoList = ({ tasks, setTasks }) => {
     );
   };
 
-  // Handle removing a task
   const handleRemoveTask = (taskId) => {
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(updatedTasks);
   };
 
-  // Render the component
   return (
     <>
       {tasks.length > 0 ? (
