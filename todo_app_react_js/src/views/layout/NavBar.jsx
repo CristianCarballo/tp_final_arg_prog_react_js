@@ -1,8 +1,7 @@
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import PhoneIcon from "@mui/icons-material/Phone";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import PersonPinIcon from "@mui/icons-material/PersonPin";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,15 +20,11 @@ export const NavBar = () => {
       aria-label="icon label tabs example"
     >
       <Link to="/">
-        <Tab icon={<PhoneIcon />} label="RECENTS" />
+        <Tab icon={<ChecklistRtlIcon />} label="LISTA DE TAREAS" />
       </Link>
 
-      <Link to="/favorites">
-        <Tab icon={<FavoriteIcon />} label="FAVORITES" />
-      </Link>
-
-      <Link to="/nearby">
-        <Tab icon={<PersonPinIcon />} label="NEARBY" />
+      <Link to="/form">
+        <Tab icon={<PlaylistAddIcon />} label="FORMULARIO" />
       </Link>
     </Tabs>
   );
