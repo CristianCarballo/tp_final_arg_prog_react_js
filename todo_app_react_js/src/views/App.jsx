@@ -2,8 +2,10 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import { Content } from "./views/layout/Content";
-import { NavBar } from "./views/layout/NavBar";
+import { TodoList } from "./modules/todoList/TodoList";
+import { TodoForm } from "./modules/todoForm/TodoForm";
+import { tasksList } from "./data";
+import { useState } from "react";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -14,18 +16,21 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export const App = () => {
+  const [tasks, setTasks] = useState(tasksList);
+
   return (
     <>
+      <h1 style={{ textAlign: "center" }}>Trabajo Integrador Arg. Prog.</h1>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          <Grid xs={12}>
+          <Grid item xs={8}>
             <Item>
-              <NavBar />
+              <TodoList tasks={tasks} setTasks={setTasks} />
             </Item>
           </Grid>
-          <Grid xs={12}>
+          <Grid item xs={4}>
             <Item>
-              <Content />
+              <TodoForm tasks={tasks} setTasks={setTasks} />
             </Item>
           </Grid>
         </Grid>
